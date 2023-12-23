@@ -1,147 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Form</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-  <style>
-    /* Combined styles */
-    @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-    * {
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
-    }
-    body {
-      display: flex;
-      height: 100vh;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      background: #151515;
-    }
-    .login-form {
-      position: relative;
-      width: 370px;
-      height: auto;
-      background: #1b1b1b;
-      padding: 40px 35px 60px;
-      box-sizing: border-box;
-      border: 1px solid black;
-      border-radius: 5px;
-      box-shadow: inset 0 0 1px #272727;
-    }
-    .text {
-      font-size: 30px;
-      color: #c7c7c7;
-      font-weight: 600;
-      letter-spacing: 2px;
-    }
-    form {
-      margin-top: 40px;
-    }
-    form .field {
-      margin-top: 20px;
-      display: flex;
-    }
-    .field .fas {
-      height: 50px;
-      width: 60px;
-      color: #868686;
-      font-size: 20px;
-      line-height: 50px;
-      border: 1px solid #444;
-      border-right: none;
-      border-radius: 5px 0 0 5px;
-      background: linear-gradient(#333, #222);
-    }
-    .field input,
-    form button {
-      height: 50px;
-      width: 100%;
-      outline: none;
-      font-size: 19px;
-      color: #868686;
-      padding: 0 15px;
-      border-radius: 0 5px 5px 0;
-      border: 1px solid #444;
-      caret-color: #339933;
-      background: linear-gradient(#333, #222);
-    }
-    input:focus {
-      color: #339933;
-      box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1);
-      background: linear-gradient(#333933, #222922);
-      animation: glow 0.8s ease-out infinite alternate;
-    }
-    @keyframes glow {
-      0% {
-        border-color: #339933;
-        box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.1);
-      }
-      100% {
-        border-color: #6f6;
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
-          inset 0 0 10px rgba(0, 255, 0, 0.4);
-      }
-    }
-    button {
-      margin-top: 30px;
-      border-radius: 5px !important;
-      font-weight: 600;
-      letter-spacing: 1px;
-      cursor: pointer;
-    }
-    button:hover {
-      color: #339933;
-      border: 1px solid #339933;
-      box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
-        0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
-    }
-    .link {
-      margin-top: 25px;
-      color: #868686;
-    }
-    .link a {
-      color: #339933;
-      text-decoration: none;
-    }
-    .link a:hover {
-      text-decoration: underline;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<title>Next Level Login & Registration Form</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="login-form">
-    <div class="text">LOGIN</div>
-    <form onsubmit="return validateLogin()">
-      <div class="field">
-        <div class="fas fa-envelope"></div>
-        <input type="text" id="username" placeholder="Email or Phone">
-      </div>
-      <div class="field">
-        <div class="fas fa-lock"></div>
-        <input type="password" id="password" placeholder="Password">
-      </div>
-      <button class="login-btn">LOGIN</button> 
-      <div class="link">
-      </div>
-    </form>
-  </div>
-  <script>
-    function validateLogin() {
-      var email = document.getElementById("username").value;
-      var password = document.getElementById('password').value;
-      if ((email === 'dhananjay123@gmail.com' && password === '123456') || (email === 'Ashu897' && password === 'admin')){
-        alert("Successful!");
-        window.location.href = "https://mrgdc24.github.io/Wikipedia-project/newpage.html";
-        return false; // Prevent form submission
-      } else {
-        alert("Wrong input!");
-        return false; // Prevent form submission
-      }
-    }
-  </script>
+	<div class="container">
+		<div class="form signup">
+			<h2>Sign Up</h2>
+			<div class="inputBox">
+				<input type="text" required="required" id="signupUsername">
+				<i class="fa-regular fa-user"></i>
+				<span>username</span>
+			</div>
+			<div class="inputBox">
+				<input type="text" required="required" id="signupEmail">
+				<i class="fa-regular fa-envelope"></i>
+				<span>email address</span>
+			</div>
+			<div class="inputBox">
+				<input type="password" required="required" id="signupPassword">
+				<i class="fa-solid fa-lock"></i>
+				<span>create password</span>
+			</div>
+			<div class="inputBox">
+				<input type="password" required="required" id="confirmPassword">
+				<i class="fa-solid fa-lock"></i>
+				<span>confirm password</span>
+			</div>
+			<div class="inputBox">
+				<input type="submit" value="Create Account" id="signupBtn">
+			</div>
+			<p>Already a member ? <a href="#" class="login">Log In</a></p>
+		</div>
+		
+		<div class="form signin">
+			<h2>Sign In</h2>
+			<div class="inputBox">
+				<input type="text" required="required" id="signinUsername">
+				<i class="fa-regular fa-user"></i>
+				<span>username</span>
+			</div>
+			<div class="inputBox">
+				<input type="password" required="required" id="signinPassword">
+				<i class="fa-solid fa-lock"></i>
+				<span>password</span>
+			</div>
+			<div class="inputBox">
+				<input type="submit" value="Login" id="signinBtn">
+			</div>
+			<p>Not Registered ? <a href="#" class="create">Create an account</a></p>
+		</div>
+	</div>
+
+	<script>
+		let login = document.querySelector('.login');
+		let create = document.querySelector('.create');
+		let container = document.querySelector('.container');
+
+		login.onclick = function(){
+			container.classList.add('signinForm');
+		}
+		
+		create.onclick = function(){
+			container.classList.remove('signinForm');
+		}
+
+		document.getElementById('signinBtn').addEventListener('click', function(event) {
+			event.preventDefault();
+			const username = document.getElementById('signinUsername').value;
+			const password = document.getElementById('signinPassword').value;
+			
+			// Check for multiple sets of credentials
+			const credentials = [
+				{ username: 'dhananjay24', password: 'admin24' },
+				{ username: 'Ashu897', password: 'admin' }
+				// Add more username and password combinations as needed
+			];
+
+			// Check if the entered credentials match any valid set
+			const isValidCredential = credentials.some(credential => {
+				return credential.username === username && credential.password === password;
+			});
+
+			if (isValidCredential) {
+				window.location.href = 'https://mrgdc24.github.io/Wikipedia-project/newpage.html'; // Replace with your website URL
+			} else {
+				alert('Invalid username or password. Please try again.');
+			}
+		});
+
+		document.getElementById('signupBtn').addEventListener('click', function(event) {
+			event.preventDefault();
+			const username = document.getElementById('signupUsername').value;
+			const email = document.getElementById('signupEmail').value;
+			const password = document.getElementById('signupPassword').value;
+			const confirmPassword = document.getElementById('confirmPassword').value;
+			
+			// Add your signup logic here
+			// For example: Validate passwords match and proceed with signup logic
+			if (password === confirmPassword) {
+				// Perform signup actions or validation
+				alert('Account created successfully! Please sign in.');
+			} else {
+				alert('Passwords do not match. Please try again.');
+			}
+		});
+	</script>
 </body>
 </html>
 
